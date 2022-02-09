@@ -17,20 +17,20 @@ public class Login {
     private String name;
     private String password;
     private String phoneNumber;
+    private String role;
     
 	public Login() {
 		
 	}
 
-	public Login(String email, String name, String password, String phoneNumber) {
+	public Login(String email, String name, String password, String phoneNumber, String role) {
 		super();
 		this.email = email;
 		this.name = name;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
+		this.role = role;
 	}
-	
-	
 
 	public String getEmail() {
 		return email;
@@ -64,11 +64,20 @@ public class Login {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	@Override
 	public String toString() {
-		return "UserLogin [email=" + email + ", name=" + name + ", password=" + password + ", phoneNumber="
-				+ phoneNumber + "]";
+		return "Login [email=" + email + ", name=" + name + ", password=" + password + ", phoneNumber=" + phoneNumber
+				+ ", role=" + role + "]";
 	}
-    
+
+	
     
 }
