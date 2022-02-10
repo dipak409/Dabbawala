@@ -3,15 +3,23 @@ package com.dipak.model;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Bill {
 	
 	@Id
+	@GeneratedValue
 	private int billId;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	private LocalDateTime startDateTime;
-	private LocalDateTime endDateTime;	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+	private LocalDateTime endDateTime;
+	@OneToOne
 	private OrderDetails order;
 	private int totalItem;
 	private double totalCost;

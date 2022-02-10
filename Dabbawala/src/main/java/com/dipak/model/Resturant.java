@@ -3,15 +3,20 @@ package com.dipak.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Resturant {
 	
 	@Id
+	@GeneratedValue
 	private int restaurantId;
 	private String restaurantName;
+	@OneToOne
 	private Address address;
+	@OneToOne
 	private List<Item> itemList;
 	private String managerName;
 	private String contactNumber;

@@ -3,15 +3,23 @@ package com.dipak.model;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class OrderDetails {
 	@Id
+	@GeneratedValue
 	private int orderId;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	private LocalDateTime startDateTime;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	private LocalDateTime endDateTime;	
 	private String orderStatus;
+	@OneToOne
 	private FoodCart cart;
 	
 	

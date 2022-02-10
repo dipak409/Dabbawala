@@ -3,14 +3,19 @@ package com.dipak.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class FoodCart {
 	
 	@Id
+	@GeneratedValue
 	private int cartId;
+	@OneToOne
 	private Customer customer;
+	@OneToOne
 	private List<Item> itemList;
 	
 	

@@ -1,18 +1,22 @@
 package com.dipak.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Customer {
 	
 	@Id
+	@GeneratedValue
 	private int customerId;
 	private String firstName;
 	private String lastName;
 	private int age;
 	private String gender;
 	private String mobileNumber;
+	@OneToOne
 	private Address address;
 	private String email;
 	
