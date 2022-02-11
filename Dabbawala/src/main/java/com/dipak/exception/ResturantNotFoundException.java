@@ -3,7 +3,7 @@ package com.dipak.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(code = HttpStatus.NOT_FOUND,reason = " Resturant is not availiable in this moment")
+@ResponseStatus(code = HttpStatus.NOT_FOUND,reason = " Resturant is not availiable at this moment")
 public class ResturantNotFoundException  extends Exception{
 
 }
